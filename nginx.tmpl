@@ -443,6 +443,7 @@ server {
     }
         {{- end }}
     return 503;
+}
     {{- end }}
 {{- end }}
 
@@ -522,6 +523,7 @@ server {
         return 301 https://$host:{{ $globals.external_https_port }}$request_uri;
         {{- end }}
     }
+}
     {{- end }}
 
 server {
