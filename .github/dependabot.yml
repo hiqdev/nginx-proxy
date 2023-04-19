@@ -1,11 +1,12 @@
 version: 2
 updates:
-
   # Maintain dependencies for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "build"
     labels:
       - "type/build"
       - "scope/dockerfile"
@@ -15,5 +16,7 @@ updates:
     directory: "/test/requirements"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "ci"
     labels:
       - "type/ci"
