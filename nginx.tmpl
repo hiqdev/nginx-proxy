@@ -303,6 +303,10 @@ map "" $upstream_keepalive {
 # Apply fix for very long server names
 server_names_hash_bucket_size 128;
 
+# Allow long headers
+proxy_buffers 4 32k;
+proxy_buffer_size 32k;
+
 # Default dhparam
 {{- if (exists "/etc/nginx/dhparam/dhparam.pem") }}
 ssl_dhparam /etc/nginx/dhparam/dhparam.pem;
